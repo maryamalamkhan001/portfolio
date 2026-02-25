@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maryam Alam Khan | Portfolio</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background: #0f172a; 
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #2a5298;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg,#1e3c72,#2a5298);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease;
+}
+
+header.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+  background: white;
+  color: #2a5298;
+  padding: 10px 22px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2a5298;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+section.left {
+  transform: translateX(-100px);
+}
+
+section.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+h2 {
+  color: #2a5298;
+  border-bottom: 2px solid #2a5298;
+  padding-bottom: 5px;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+}
+
+.project {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #2a5298;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.project a:hover {
+  background: #2a5298;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #0f172a; 
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+  header {
+    padding: 50px 15px;
+  }
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+</style>
+</head>
+
+<body onload="scrollToTop()">
+
+<!-- NAVBAR -->
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#background">Background</a>
+<a href="#experience">Experience</a>
+<a href="#achievements">Achievements</a>
+<a href="#projects">Projects</a>
+<a href="#media">Media</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
+<header id="header">
+<img src="Image/profile.jpeg" alt="Profile Photo">
+<h1>Maryam Alam Khan</h1>
+<p>BS FinTech Student | Frontend Developer | Video Editor | Generative AI Enthusiast</p>
+<br>
+<a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>
+I am a BS FinTech student passionate about Frontend Web Development,
+Video Editing, and Generative AI technologies.
+I aim to develop innovative digital solutions and user-friendly web applications.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section left">
+<h2>Skills</h2>
+<ul>
+<li>HTML, CSS, JavaScript</li>
+<li>Video Editing (CapCut, Filmora, Canva)</li>
+<li>Generative AI & API Integration</li>
+<li>Python & Flask (Basic)</li>
+<li>Streamlit & Google Colab</li>
+<li>Communication & Leadership</li>
+</ul>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background" class="section">
+<h2>Education & Background</h2>
+<ul>
+<li>BS FinTech – University Student</li>
+<li>Frontend Web Development</li>
+<li>Python Programming (Basic)</li>
+<li>Generative AI Applications</li>
+</ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section left">
+<h2>Experience</h2>
+<ul>
+<li>Web Development Intern – Arch Technologies</li>
+<li>Community Service Society Member</li>
+<li>Video Editor</li>
+</ul>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+<h2>Achievements</h2>
+<ul>
+<li>Developed Multiple AI Applications</li>
+<li>Participated in Technology Festival</li>
+<li>Active Event Organizer</li>
+</ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section left">
+<h2>Projects</h2>
+<div class="projects">
+<div class="project">
+<h3>AI Travel Assistant</h3>
+<p>An AI-powered travel planning application...</p>
+<p><strong>Tech Used:</strong> Python, Streamlit, Generative AI, Hugging Face Spaces</p>
+<a href="https://huggingface.co/spaces/maryamalamkhan/Travler" target="_blank">Live Application</a>
+</div>
+
+<div class="project">
+<h3>AI Career Navigator</h3>
+<p>An AI-powered career guidance application...</p>
+<p><strong>Tech Used:</strong> Python, Streamlit, Generative AI, Hugging Face Spaces</p>
+<a href="https://huggingface.co/spaces/maryamalamkhan/AI_Career_Navigator" target="_blank">Live Application</a>
+</div>
+
+<div class="project">
+<h3>AI Tech Blog Website</h3>
+<p>A responsive blog website focused on AI topics...</p>
+<p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+<a href="https://maryamalamkhan001.github.io/AI_Tech_Blog/" target="_blank">Live Website</a>
+</div>
+
+<div class="project">
+<h3>Personal Finance Tracker</h3>
+<p>A web app to track income and expenses...</p>
+<p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+<a href="https://maryamalamkhan001.github.io/-Personal-Finance-Tracker-/" target="_blank">Live Website</a>
+</div>
+
+<div class="project">
+<h3>Zakat Calculator</h3>
+<p>A simple Zakat Calculator that calculates zakat based on gold, silver, and cash savings.</p>
+
+<p><strong>Tech Used:</strong>  HTML, CSS, JavaScript</p>
+
+<a href="https://maryamalamkhan001.github.io/-Zakat-calculator/" target="_blank">View Project</a>
+</div>
+</div>
+</section>
+
+<!-- MEDIA -->
+<section id="media" class="section left">
+<h2>Video Editing & Media Work</h2>
+<p>Experienced in editing promotional, event, and social media videos using modern transitions, subtitles, and sound synchronization.</p>
+<!-- Link removed as requested -->
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p>Email: maryamalamkhan00@gmail.com</p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/maryamalamkhan/" target="_blank">Maryam Alam Khan</a></p>
+<p>GitHub: <a href="https://github.com/maryamalamkhan001" target="_blank">github.com/maryamalamkhan001</a></p>
+</section>
+
+<footer>
+<p>© 2026 Maryam Alam Khan</p>
+</footer>
+
+<script>
+function scrollToTop() {
+  window.scrollTo(0,0);
+  document.getElementById('header').classList.add('active');
+}
+
+// Animate sections on scroll
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach((section) => {
+    const top = section.getBoundingClientRect().top;
+    if(top < triggerBottom) {
+      section.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
