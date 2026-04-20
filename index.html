@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maryam Alam Khan | Portfolio</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background: #0f172a; 
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #2a5298;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg,#1e3c72,#2a5298);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease;
+}
+
+header.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+  background: white;
+  color: #2a5298;
+  padding: 10px 22px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2a5298;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+section.left {
+  transform: translateX(-100px);
+}
+
+section.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+h2 {
+  color: #2a5298;
+  border-bottom: 2px solid #2a5298;
+  padding-bottom: 5px;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+}
+
+.project {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #2a5298;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.project a:hover {
+  background: #2a5298;
+  transform: scale(1.05);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 10px;
+  background: #2a5298;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.9; }
+.contact-link {
+  color: #2a5298;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+/* FOOTER */
+footer {
+  background: #0f172a; 
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+
+/* RESPONSIVE IMPROVEMENTS (ONLY ADDITION) */
+
+/* Tablets */
+@media (max-width: 900px) {
+  section {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  nav a {
+    margin: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  header img {
+    width: 120px;
+    height: 120px;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 6px 0;
+  }
+
+  section {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+}
+
+/* Skill colors */
+.html { width: 95%; background: #2a5298; }
+.css { width: 90%; background: #1e3c72; }
+.js { width: 80%; background: #f39c12; }
+.video { width: 88%; background: #a53d31; }
+.ai { width: 75%; background: #8e44ad; }
+.py { width: 70%; background: #27ae60; }
+.stream { width: 60%; background: #16a085; }
+.comm { width: 85%; background: #34495e; }
+/* Dark Mode */
+.dark-mode {
+  background: #0b1220;
+  color: white;
+}
+
+.dark-mode section {
+  background: #111a2e;
+  color: white;
+}
+
+.dark-mode nav {
+  background: #000814;
+}
+
+.dark-mode .project {
+  background: #16213e;
+  color: white;
+}
+
+.mode-btn {
+  background: white;
+  color: #2a5298;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body onload="scrollToTop()">
+
+<!-- NAVBAR -->
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#background">Background</a>
+<a href="#experience">Experience</a>
+<a href="#achievements">Achievements</a>
+<a href="#projects">Projects</a>
+<a href="#media">Media</a>
+<a href="#contact">Contact</a>
+<button onclick="toggleDarkMode()" class="mode-btn">🌙 Dark Mode</button>
+</nav>
+
+<!-- HEADER -->
+<header id="header">
+<img src="Image/profile.jpeg" alt="Profile Photo">
+<h1>Maryam Alam Khan</h1>
+<p>BS FinTech Student | Frontend Developer | Video Editor | Generative AI Enthusiast</p>
+<br>
+<a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>
+I am a BS FinTech student passionate about Frontend Web Development,
+Video Editing, and Generative AI technologies.
+I aim to develop innovative digital solutions and user-friendly web applications.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section left">
+<h2>Skills</h2>
+
+<p>HTML</p>
+<div class="bar"><div class="fill html">95%</div></div>
+
+<p>CSS</p>
+<div class="bar"><div class="fill css">90%</div></div>
+
+<p>JavaScript</p>
+<div class="bar"><div class="fill js">80%</div></div>
+
+<p>Video Editing (CapCut, Filmora, Canva)</p>
+<div class="bar"><div class="fill video">88%</div></div>
+
+<p>Generative AI & API Integration</p>
+<div class="bar"><div class="fill ai">75%</div></div>
+
+<p>Python & Flask (Basic)</p>
+<div class="bar"><div class="fill py">70%</div></div>
+
+<p>Streamlit & Google Colab</p>
+<div class="bar"><div class="fill stream">72%</div></div>
+
+<p>Communication & Leadership</p>
+<div class="bar"><div class="fill comm">85%</div></div>
+
+</section>
+
+<!-- BACKGROUND -->
+<section id="background" class="section">
+<h2>Education & Background</h2>
+<ul>
+<li>BS FinTech – University Student</li>
+<li>Frontend Web Development</li>
+<li>Python Programming (Basic)</li>
+<li>Generative AI Applications</li>
+</ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section left">
+<h2>Experience</h2>
+<ul>
+<li>Web Development Intern – Arch Technologies</li>
+<li>Community Service Society Member</li>
+<li>Video Editor</li>
+</ul>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+<h2>Achievements</h2>
+<ul>
+<li>Developed Multiple AI Applications</li>
+<li>Participated in Technology Festival</li>
+<li>Active Event Organizer</li>
+</ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section left">
+<h2>Projects</h2>
+<div class="projects">
+<div class="project">
+<h3>AI Travel Assistant</h3>
+<p>An AI-powered travel planning application...</p>
+<p><strong>Tech Used:</strong> Python, Streamlit, Generative AI, Hugging Face Spaces</p>
+<a href="https://huggingface.co/spaces/maryamalamkhan/Travler" target="_blank">Live Application</a>
+</div>
+
+<div class="project">
+<h3>AI Career Navigator</h3>
+<p>An AI-powered career guidance application...</p>
+<p><strong>Tech Used:</strong> Python, Streamlit, Generative AI, Hugging Face Spaces</p>
+<a href="https://huggingface.co/spaces/maryamalamkhan/AI_Career_Navigator" target="_blank">Live Application</a>
+</div>
+
+<div class="project">
+<h3>AI Tech Blog Website</h3>
+<p>A responsive blog website focused on AI topics...</p>
+<p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+<a href="https://maryamalamkhan001.github.io/AI_Tech_Blog/" target="_blank">Live Website</a>
+</div>
+
+<div class="project">
+<h3>Personal Finance Tracker</h3>
+<p>A web app to track income and expenses...</p>
+<p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+<a href="https://maryamalamkhan001.github.io/-Personal-Finance-Tracker-/" target="_blank">Live Website</a>
+</div>
+
+<div class="project">
+<h3>Zakat Calculator</h3>
+<p>A simple Zakat Calculator that calculates zakat based on gold, silver, and cash savings.</p>
+
+<p><strong>Tech Used:</strong>  HTML, CSS, JavaScript</p>
+
+<a href="https://maryamalamkhan001.github.io/-Zakat-calculator/" target="_blank">View Project</a>
+</div>
+</div>
+</section>
+
+<!-- MEDIA -->
+<section id="media" class="section left">
+<h2>Video Editing & Media Work</h2>
+<p>Experienced in editing promotional, event, and social media videos using modern transitions, subtitles, and sound synchronization.</p>
+<!-- Link removed as requested -->
+</section>
+
+<!-- FEEDBACK SECTION ADDED -->
+<section id="feedback" class="section">
+<h2>Feedback</h2>
+<p>I would love to hear your feedback about my portfolio:</p>
+<form>
+<input type="text" placeholder="Your Name" required>
+<textarea rows="5" placeholder="Write your feedback here..." required></textarea>
+<button type="submit">Submit</button>
+</form>
+<ul id="feedbackList"></ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:maryamalamkhan00@gmail.com" style="color:#2a5298; font-weight:bold;">
+maryamalamkhan00@gmail.com
+</a></p>
+<p>LinkedIn: <a class="contact-link" href="https://www.linkedin.com/in/maryamalamkhan/" target="_blank">
+Maryam Alam Khan
+</a></p>
+
+<p>GitHub: <a class="contact-link" href="https://github.com/maryamalamkhan001" target="_blank">
+github.com/maryamalamkhan001
+</a></p>
+</section>
+
+<footer>
+<p>© 2026 Maryam Alam Khan</p>
+</footer>
+
+<script>
+function scrollToTop() {
+  window.scrollTo(0,0);
+  document.getElementById('header').classList.add('active');
+}
+
+// Animate sections on scroll
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach((section) => {
+    const top = section.getBoundingClientRect().top;
+    if(top < triggerBottom) {
+      section.classList.add('active');
+    }
+  });
+});
+// FEEDBACK SYSTEM (LOCAL STORAGE)
+const form = document.querySelector("form");
+const feedbackList = document.getElementById("feedbackList");
+
+let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+
+function displayFeedback() {
+  feedbackList.innerHTML = "";
+  feedbacks.forEach(fb => {
+    let li = document.createElement("li");
+    li.textContent = fb.name + ": " + fb.message;
+    feedbackList.appendChild(li);
+  });
+}
+
+displayFeedback();
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.querySelector("input").value;
+  let message = document.querySelector("textarea").value;
+
+  feedbacks.push({ name, message });
+  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+  displayFeedback();
+  this.reset();
+});
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</html>
